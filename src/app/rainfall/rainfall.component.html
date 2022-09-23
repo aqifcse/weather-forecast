@@ -1,4 +1,51 @@
-<table mat-table [dataSource]="rainfalls" class="mat-elevation-z8">
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Step Start Time</th>
+            <th scope="col">Step End Time</th>
+            <th scope="col">Minimum Value</th>
+            <th scope="col">Average Value</th>
+            <th scope="col">Maximum Value</th>
+            <th scope="col">Average Value Day</th>
+            <th scope="col">Average Value Night</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let rainfall of rainfalls">
+            <tr>
+                <td>{{rainfall.step_start}}</td>
+                <td>{{rainfall.step_end}}</td>
+                <td>{{rainfall.val_min}}</td>
+                <td>{{rainfall.val_avg}}</td>
+                <td>{{rainfall.val_max}}</td>
+                <td>{{rainfall.val_avg_day}}</td>
+                <td>{{rainfall.val_avg_night}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+<!-- <mat-table class="lessons-table mat-elevation-z8" [dataSource]="rainfalls">
+  
+    <ng-container matColumnDef="seqNo">
+        <div *matHeaderCellDef>#</div>
+        <div *matCellDef="let lesson">{{lesson.seqNo}}</div>
+    </ng-container>
+  
+    <ng-container matColumnDef="description">
+        <div *matHeaderCellDef>Description</div>
+        <div class="description-cell"
+                  *matCellDef="let lesson">{{lesson.description}}</div>
+    </ng-container>
+  
+    <ng-container matColumnDef="duration">
+        <div *matHeaderCellDef>Duration</div>
+        <div class="duration-cell"
+                  *matCellDef="let lesson">{{lesson.duration}}</div>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    
+</mat-table> -->

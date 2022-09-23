@@ -15,8 +15,8 @@ export class RainfallComponent implements OnInit {
   constructor(private service:RainfallService) {}
   
   ngOnInit() {
-      this.service.getPosts()
-        .subscribe(response => {
+      this.service.getRainfalls()
+        .subscribe((response: any) => {
           this.data = response;
           this.rainfalls = this.data['data']['202224']['forecast_data']['rf']
         });

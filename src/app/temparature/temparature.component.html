@@ -1,1 +1,25 @@
-<p>temparature works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Step Start Time</th>
+            <th scope="col">Step End Time</th>
+            <th scope="col">Minimum Value</th>
+            <th scope="col">Average Value</th>
+            <th scope="col">Maximum Value</th>
+            <th scope="col">Average Value Day</th>
+            <th scope="col">Average Value Night</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let temparature of temparatures">
+            <tr>
+                <td>{{temparature.step_start}}</td>
+                <td>{{temparature.step_end}}</td>
+                <td>{{temparature.val_min}}</td>
+                <td>{{temparature.val_avg}}</td>
+                <td>{{temparature.val_max}}</td>
+                <td>{{temparature.val_avg_day}}</td>
+                <td>{{temparature.val_avg_night}}</td>
+            </tr>
+        </ng-container>
+    </tbody>

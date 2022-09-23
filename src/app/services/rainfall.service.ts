@@ -9,7 +9,7 @@ export class RainfallService {
    
   constructor(private httpClient: HttpClient) { }
   
-  getPosts(){
+  getRainfalls(){
     return this.httpClient.get(this.url);
   }
   

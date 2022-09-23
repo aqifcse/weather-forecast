@@ -26,10 +26,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
 
     MatInputModule,
+    MatTableModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule,
     MatSortModule,
-    MatTableModule
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

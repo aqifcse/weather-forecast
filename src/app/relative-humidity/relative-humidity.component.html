@@ -1,1 +1,26 @@
-<p>relative-humidity works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Step Start Time</th>
+            <th scope="col">Step End Time</th>
+            <th scope="col">Minimum Value</th>
+            <th scope="col">Average Value</th>
+            <th scope="col">Maximum Value</th>
+            <th scope="col">Average Value Day</th>
+            <th scope="col">Average Value Night</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let relativeHumidity of relativeHumidities">
+            <tr>
+                <td>{{relativeHumidity.step_start}}</td>
+                <td>{{relativeHumidity.step_end}}</td>
+                <td>{{relativeHumidity.val_min}}</td>
+                <td>{{relativeHumidity.val_avg}}</td>
+                <td>{{relativeHumidity.val_max}}</td>
+                <td>{{relativeHumidity.val_avg_day}}</td>
+                <td>{{relativeHumidity.val_avg_night}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

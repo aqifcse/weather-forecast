@@ -195,7 +195,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@~14.2.3":
+"@angular/core@^14.2.3":
   "integrity" "sha512-neW2n5Ts2purYEVh0Lf207otZbhYH4C4lwwu8ffxdRiXahQiTCbmyM3IQFrQZbLDb/ZeD2KhoCl6p0hlyg14cA=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-14.2.3.tgz"
   "version" "14.2.3"
@@ -208,6 +208,13 @@
   "version" "14.2.3"
   dependencies:
     "tslib" "^2.3.0"
+
+"@angular/http@^7.2.16":
+  "integrity" "sha512-yvjbNyzFSmmz4UTjCdy5M8mk0cZqf9TvSf8yN5UVIwtw4joyuUdlgJCuin0qSbQOKIf/JjHoofpO2JkPCGSNww=="
+  "resolved" "https://registry.npmjs.org/@angular/http/-/http-7.2.16.tgz"
+  "version" "7.2.16"
+  dependencies:
+    "tslib" "^1.9.0"
 
 "@angular/material@^14.2.2":
   "integrity" "sha512-jVCaESSTTkLjRvMzSQj294s0Lz1YMVFkl0svrMtWgkUMXHEfx2Vjw6FXdrVrBXlxEIrpfhkTEXVN2DC1kkAkQw=="
