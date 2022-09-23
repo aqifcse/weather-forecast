@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Rainfall } from './rainfall.model';
+import { RainfallService } from '../services/rainfall.service';
 
 @Component({
   selector: 'app-rainfall',
@@ -7,14 +7,17 @@ import { Rainfall } from './rainfall.model';
   styleUrls: ['./rainfall.component.css']
 })
 export class RainfallComponent implements OnInit {
-
-  rainfall: Rainfall[] = [
-    new Rainfall('2022-09-22T00:00:00', '2022-09-23T00:00:00', 65.13999938964844, 87.71, 99.55999755859375, 0.0, 0.0)
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
+  data: any;
+  rainfalls: any;
+  
+  constructor(private service:RainfallService) {}
+  
+  ngOnInit() {
+      this.service.getPosts()
+        .subscribe(response => {
+          this.data = response;
+          this.rainfalls = this.data['data']['202224']['forecast_data']['rf']
+        });
   }
 
 }
