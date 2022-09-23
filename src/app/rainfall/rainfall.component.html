@@ -1,10 +1,4 @@
-<h2>Rainfall forecast in Cox's Bazar Sadar</h2>
-  
-<ul class="list-group">
-
-  <li 
-      *ngFor="let rainfall of rainfalls"
-      class="list-group-item">
-      {{ rainfall.step_start }}
-  </li>
-</ul>
+<table mat-table [dataSource]="rainfalls" class="mat-elevation-z8">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

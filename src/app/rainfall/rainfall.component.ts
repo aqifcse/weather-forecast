@@ -9,6 +9,8 @@ import { RainfallService } from '../services/rainfall.service';
 export class RainfallComponent implements OnInit {
   data: any;
   rainfalls: any;
+
+  displayedColumns: string[] = ["step_start", "step_end", "val_min", "val_avg", "val_max", "val_avg_day", "val_avg_night"];
   
   constructor(private service:RainfallService) {}
   
