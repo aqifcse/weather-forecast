@@ -147,6 +147,15 @@
   dependencies:
     "tslib" "^2.3.0"
 
+"@angular/cdk@^14.2.2":
+  "integrity" "sha512-PXEnhX+QDOsmHVVnqTuoGaK7Wn9hFd5kWAmHTTU7lZr3XVu/AtDcEU+LB19wOFU0fY+kSYHMgN+BYo1TiR8vbw=="
+  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-14.2.2.tgz"
+  "version" "14.2.2"
+  dependencies:
+    "tslib" "^2.3.0"
+  optionalDependencies:
+    "parse5" "^5.0.0"
+
 "@angular/cli@^14.2.3":
   "integrity" "sha512-pFo/h3ImjebjKzdw6yWcaERSIzWsSu4eqH9qQ/dWD1ChkSph+krBw3+5Q+Kda5l3dLgl7mQXX6mC5u8IHTdvDg=="
   "resolved" "https://registry.npmjs.org/@angular/cli/-/cli-14.2.3.tgz"
@@ -215,6 +224,13 @@
   "integrity" "sha512-r5I5cPngk2Erxe/OEL9Hl1j1VcNSAAyVzh7KmtOP8z7RZYCd0MeRISKrmA5CGn5Dh7A5POFLoOpBatmvnc4Z/A=="
   "resolved" "https://registry.npmjs.org/@angular/forms/-/forms-13.1.2.tgz"
   "version" "13.1.2"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/material@^14.2.2":
+  "integrity" "sha512-jVCaESSTTkLjRvMzSQj294s0Lz1YMVFkl0svrMtWgkUMXHEfx2Vjw6FXdrVrBXlxEIrpfhkTEXVN2DC1kkAkQw=="
+  "resolved" "https://registry.npmjs.org/@angular/material/-/material-14.2.2.tgz"
+  "version" "14.2.2"
   dependencies:
     "tslib" "^2.3.0"
 
@@ -4659,6 +4675,11 @@
   dependencies:
     "parse5" "^6.0.1"
 
+"parse5@^5.0.0":
+  "integrity" "sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug=="
+  "resolved" "https://registry.npmjs.org/parse5/-/parse5-5.1.1.tgz"
+  "version" "5.1.1"
+
 "parse5@^6.0.1":
   "integrity" "sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw=="
   "resolved" "https://registry.npmjs.org/parse5/-/parse5-6.0.1.tgz"
@@ -6161,10 +6182,10 @@
   "resolved" "https://registry.npmjs.org/typed-assert/-/typed-assert-1.0.8.tgz"
   "version" "1.0.8"
 
-"typescript@~4.5.2":
-  "integrity" "sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.4.tgz"
-  "version" "4.5.4"
+"typescript@<4.6":
+  "integrity" "sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
+  "version" "4.5.5"
 
 "ua-parser-js@^0.7.30":
   "integrity" "sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ=="
