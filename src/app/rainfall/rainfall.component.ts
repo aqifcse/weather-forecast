@@ -7,6 +7,7 @@ import { RainfallService } from '../services/rainfall.service';
   styleUrls: ['./rainfall.component.css']
 })
 export class RainfallComponent implements OnInit {
+
   data: any;
   rainfalls: any;
 
@@ -23,5 +24,8 @@ export class RainfallComponent implements OnInit {
           console.log(this.rainfalls)
         });
   }
+
+  getRfChart() {
+    }
 
 }
