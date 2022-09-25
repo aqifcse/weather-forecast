@@ -1,27 +1,50 @@
-<h4>Cox's Bazar Sadar Upazilla</h4>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Step Start Time</th>
-            <th scope="col">Step End Time</th>
-            <th scope="col">Minimum Value</th>
-            <th scope="col">Average Value</th>
-            <th scope="col">Maximum Value</th>
-            <th scope="col">Average Value Day</th>
-            <th scope="col">Average Value Night</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ng-container *ngFor="let relativeHumidity of relativeHumidities">
-            <tr>
-                <td>{{relativeHumidity.step_start}}</td>
-                <td>{{relativeHumidity.step_end}}</td>
-                <td>{{relativeHumidity.val_min}}</td>
-                <td>{{relativeHumidity.val_avg}}</td>
-                <td>{{relativeHumidity.val_max}}</td>
-                <td>{{relativeHumidity.val_avg_day}}</td>
-                <td>{{relativeHumidity.val_avg_night}}</td>
-            </tr>
-        </ng-container>
-    </tbody>
+<table mat-table  class="mat-elevation-z8" [dataSource]="relativeHumidities">
+  
+    <ng-container matColumnDef="step_start">
+        <th mat-header-cell *matHeaderCellDef>Step Start</th>
+        <td mat-cell *matCellDef="let rainfall">{{rainfall.step_start}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="step_end">
+        <th mat-header-cell *matHeaderCellDef>Step End</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.step_end}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="val_min">
+        <th mat-header-cell *matHeaderCellDef>Minimum Value</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.val_min}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="val_avg">
+        <th mat-header-cell *matHeaderCellDef>Average Value</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.val_avg}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="val_max">
+        <th mat-header-cell *matHeaderCellDef>Maximum Value</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.val_max}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="val_avg_day">
+        <th mat-header-cell *matHeaderCellDef>Average Value Day</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.val_avg_day}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="val_avg_night">
+        <th mat-header-cell *matHeaderCellDef>Average Value Night</th>
+        <td  mat-cell class="description-cell"
+                  *matCellDef="let rainfall">{{rainfall.val_avg_night}}</td>
+    </ng-container>
+  
+    
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
 </table>

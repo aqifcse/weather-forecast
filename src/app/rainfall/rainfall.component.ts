@@ -19,6 +19,8 @@ export class RainfallComponent implements OnInit {
         .subscribe((response: any) => {
           this.data = response;
           this.rainfalls = this.data['data']['202224']['forecast_data']['rf']
+
+          console.log(this.rainfalls)
         });
   }
 
