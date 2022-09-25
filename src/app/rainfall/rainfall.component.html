@@ -1,10 +1,8 @@
-<!-- <div class="demo-button-container">
-    <button routerLink = "/rf-chart" mat-raised-button (click)="getRfChart()" class="demo-button">
+<div class="demo-button-container">
+    <button routerLink = "./rf-chart" mat-raised-button (click)="getRfChart()" class="demo-button">
       Show Chart
     </button>
-</div> -->
-
-<li><a routerLink="/rf-chart">RF Chart</a></li>
+</div>
 
 <table mat-table  class="mat-elevation-z8" [dataSource]="rainfalls">
   
@@ -56,3 +54,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
 </table>
+
+<router-outlet></router-outlet>

@@ -23,6 +23,7 @@ export class RainfallComponent implements OnInit {
 
           console.log(this.rainfalls)
         });
+      return this.rainfalls; 
   }
 
   getRfChart() {
