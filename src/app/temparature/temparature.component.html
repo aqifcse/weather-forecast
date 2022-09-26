@@ -1,3 +1,11 @@
+<router-outlet></router-outlet>
+
+<div class="demo-button-container">
+    <button routerLink = "./temp-chart" mat-raised-button (click)="getTempChart()" class="demo-button">
+      Show Chart
+    </button>
+</div>
+
 <table mat-table  class="mat-elevation-z8" [dataSource]="temparatures">
   
     <ng-container matColumnDef="step_start">

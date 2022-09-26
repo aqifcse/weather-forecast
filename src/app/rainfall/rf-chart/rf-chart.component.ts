@@ -24,30 +24,20 @@ export class RfChartComponent implements OnInit{
   getAvgRainfalls() {
     this.rainfalls = this.component.ngOnInit();
 
-    console.log(this.rainfalls);
-
     for (let i = 0; i < this.rainfalls.length; i++) {
       this.avg_rainfall_values.push(this.rainfalls[i]['val_avg']);
       
     }
-
-    console.log(this.avg_rainfall_values);
-
     return this.avg_rainfall_values;
   }
 
   getStepEnds() {
     this.rainfalls = this.component.ngOnInit();
 
-    console.log(this.rainfalls);
-
     for (let i = 0; i < this.rainfalls.length; i++) {
       this.step_ends.push(this.rainfalls[i]['step_end']);
       
     }
-
-    console.log(this.step_ends);
-
     return this.step_ends; 
 
   }
@@ -59,7 +49,7 @@ export class RfChartComponent implements OnInit{
       type: 'line'
     },
     title: {
-      text: 'Time vs Average Rainfall'
+      text: 'Step End vs Average Rainfall'
     },
     xAxis: {
       title: {
@@ -75,7 +65,7 @@ export class RfChartComponent implements OnInit{
     },
     yAxis: {
       title: {
-        text: 'Average Rainfall (in mm)'
+        text: 'Average Rainfall'
       }
     },
     

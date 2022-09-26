@@ -21,6 +21,11 @@ export class TemparatureComponent implements OnInit {
           this.data = response;
           this.temparatures = this.data['data']['202224']['forecast_data']['temp']
         });
+
+      return this.temparatures;
+  }
+
+  getTempChart() {
   }
 
 }

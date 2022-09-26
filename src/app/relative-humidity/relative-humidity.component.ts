@@ -7,6 +7,7 @@ import { RelativeHumidityService } from '../services/relative-humidity.service';
   styleUrls: ['./relative-humidity.component.css']
 })
 export class RelativeHumidityComponent implements OnInit {
+
   data: any;
   relativeHumidities: any;
 
@@ -20,6 +21,11 @@ export class RelativeHumidityComponent implements OnInit {
           this.data = response;
           this.relativeHumidities = this.data['data']['202224']['forecast_data']['rh']
         });
+
+      return this.relativeHumidities;
+  }
+
+  getRhChart() {
   }
 
 }

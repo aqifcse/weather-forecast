@@ -19,9 +19,7 @@ export class RainfallComponent implements OnInit {
       this.service.getRainfalls()
         .subscribe((response: any) => {
           this.data = response;
-          this.rainfalls = this.data['data']['202224']['forecast_data']['rf']
-
-          console.log(this.rainfalls)
+          this.rainfalls = this.data['data']['202224']['forecast_data']['rf'];
         });
       return this.rainfalls; 
   }
