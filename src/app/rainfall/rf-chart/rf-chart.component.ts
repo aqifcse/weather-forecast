@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { RainfallComponent } from '../rainfall.component';
@@ -11,14 +11,14 @@ import { RainfallComponent } from '../rainfall.component';
   standalone: true,
   imports: [HighchartsChartModule],
 })
-export class RfChartComponent implements AfterViewInit{
+export class RfChartComponent implements OnInit{
   rainfalls = [];
   avg_rainfall_values = [];
   step_ends = [];
 
   constructor(private component: RainfallComponent) { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
   }
 
   getAvgRainfalls() {
