@@ -13,7 +13,47 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
     </mat-form-field>
 
+    <form [formGroup]="form" (submit)="ngAfterViewInit()">
+        <mat-form-field>
+            <input 
+            matInput 
+            placeholder="Date From" 
+            [matDatepicker]="picker1"
+            formControlName="fromDate"
+            required
+            (click)="picker1.open()"
+            >
+            <mat-datepicker-toggle 
+            matSuffix [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker 
+            #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+            matInput 
+            placeholder="toDate" 
+            [matDatepicker]="picker2"
+            formControlName="toDate"
+            required
+            (click)="picker2.open()"
+            >
+            <mat-datepicker-toggle 
+            matSuffix [for]="picker2"
+            ></mat-datepicker-toggle>
+            <mat-datepicker 
+            #picker2></mat-datepicker>
+        </mat-form-field>
+        <button 
+        class="button-form" 
+        mat-raised-button color="accent" 
+        (click)="ngAfterViewInit()"
+        [disabled]="form.invalid">Submit</button>
+        <button mat-raised-button color="accent" type="button" [disabled]="form.invalid">Clear</button>
+        </form>
+
     <table mat-table [dataSource]="rainfallsDataSource">
+        
 
         <ng-container matColumnDef="step_start">
             <th mat-header-cell *matHeaderCellDef>Step Start</th>
