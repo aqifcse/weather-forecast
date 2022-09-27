@@ -30,7 +30,6 @@ export class RainfallComponent implements AfterViewInit {
         this.data = response;
         this.rainfalls = this.data['data']['202224']['forecast_data']['rf'];
         this.rainfallsDataSource = new MatTableDataSource(this.rainfalls);
-        console.log(this.rainfallsDataSource);
         this.rainfallsDataSource.paginator = this.paginator;
         
       });
