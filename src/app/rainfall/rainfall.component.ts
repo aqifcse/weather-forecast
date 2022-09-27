@@ -30,19 +30,19 @@ export class RainfallComponent implements AfterViewInit {
   
   ngAfterViewInit(): any {
 
-    
-
     this.service.getRainfalls()
       .subscribe((response: any) => {
         this.data = response;
         this.rainfalls = this.data['data']['202224']['forecast_data']['rf'];
+        
+
         this.rainfallsDataSource = new MatTableDataSource(this.rainfalls);
         this.rainfallsDataSource.paginator = this.paginator;
         
       });
     
     
-    return this.rainfallsDataSource; 
+    return this.rainfalls; 
   }
 
   applyFilter(event: Event) {
@@ -53,12 +53,6 @@ export class RainfallComponent implements AfterViewInit {
       this.rainfallsDataSource.paginator.firstPage();
     }
   }
-
-  // applyDateFilter() {
-  //   console.log(this.form);
-  //   this.rainfallsDataSource.data = this.ngAfterViewInit();
-  //   this.rainfallsDataSource.data = this.rainfallsDataSource.data.filter(e => (formatDate( e.step_start,'MM/dd/yyyy','en-US') >= this.form.value.fromDate && formatDate( e.,'MM/dd/yyyy','en-US') <= toDate))
-  // }
 
   getRfChart() {
     }

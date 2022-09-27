@@ -56,13 +56,9 @@ export class TempChartComponent implements OnInit{
       title: {
         text: 'Step End'
       },
-      type: 'datetime',
-        
-      // Use the date format in the
-      // labels property of the chart
-      series: [{
-        data: this.getStepEnds(),
-    }]
+      categories: this.getStepEnds().map((date: string | number | Date) => {
+        return Highcharts.dateFormat('%d-%m-%Y %H:%m:%S', new Date(date).getTime());
+      })
     },
     yAxis: {
       title: {

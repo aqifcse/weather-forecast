@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { DiagnosticCategory } from 'typescript';
 import { RainfallComponent } from '../rainfall.component';
 
 
@@ -14,7 +15,7 @@ import { RainfallComponent } from '../rainfall.component';
 export class RfChartComponent implements OnInit{
   rainfalls = [];
   avg_rainfall_values = [];
-  step_ends = [];
+  step_ends = new Array;
 
   constructor(private component: RainfallComponent) { }
 
@@ -35,6 +36,9 @@ export class RfChartComponent implements OnInit{
     this.rainfalls = this.component.ngAfterViewInit();
 
     for (let i = 0; i < this.rainfalls.length; i++) {
+      // const date = this.rainfalls[i]['step_end'];
+
+      // const formattedDate: any = new Date(date);
       this.step_ends.push(this.rainfalls[i]['step_end']);
       
     }
@@ -46,7 +50,8 @@ export class RfChartComponent implements OnInit{
   linechart: any = {
     chart: {
       renderTo: 'plot-container',
-      type: 'line'
+      type: 'line',
+      
     },
     title: {
       text: 'Step End vs Average Rainfall'
@@ -55,13 +60,12 @@ export class RfChartComponent implements OnInit{
       title: {
         text: 'Step End'
       },
-      type: 'datetime',
-        
-      // Use the date format in the
-      // labels property of the chart
-      series: [{
-        data: this.getStepEnds(),
-    }]
+      categories: this.getStepEnds().map((date: string | number | Date) => {
+        return Highcharts.dateFormat('%d-%m-%Y %H:%m:%S', new Date(date).getTime());
+      })
+    //   series: [{
+    //     data: this.getStepEnds(),
+    // }]
     },
     yAxis: {
       title: {
