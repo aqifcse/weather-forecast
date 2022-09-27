@@ -45,27 +45,18 @@ export class RainfallComponent implements AfterViewInit {
         }
         this.rainfallsDataSource.paginator = this.paginator;
         
-        
-
-        
-        
       });
     
     return this.rainfalls; 
   }
 
-  applyDateFilter() {
-
-    // this.start = '09-27-2022';
-    // this.end = '09-29-2022';
-
-    // console.log(this.range);
-    // this.rainfallsDataSource = new MatTableDataSource(this.ngAfterViewInit());
-    this.filteredRainfalls = this.ngAfterViewInit().filter(
-      (      m: { step_start: string | number | Date; }) => new Date(m['step_start']) >= new Date(this.form.value.fromDate!) && new Date(m['step_start']) <= new Date(this.form.value.toDate!)
-      );
-    this.rainfallsDataSource.data = new MatTableDataSource(this.filteredRainfalls);
-  }
+  // applyDateFilter() {
+  //   // this.rainfallsDataSource = new MatTableDataSource(this.ngAfterViewInit());
+  //   this.filteredRainfalls = this.ngAfterViewInit().filter(
+  //     (      m: { step_start: string | number | Date; }) => new Date(m['step_start']) >= new Date(this.form.value.fromDate!) && new Date(m['step_start']) <= new Date(this.form.value.toDate!)
+  //     );
+  //   this.rainfallsDataSource.data = new MatTableDataSource(this.filteredRainfalls);
+  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
