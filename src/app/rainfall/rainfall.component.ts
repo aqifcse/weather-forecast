@@ -1,4 +1,6 @@
+import { formatDate } from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { RainfallService } from '../services/rainfall.service';
@@ -15,6 +17,11 @@ export class RainfallComponent implements AfterViewInit {
   rainfallsDataSource:any;
 
   displayedColumns: string[] = ["step_start", "step_end", "val_min", "val_avg", "val_max", "val_avg_day", "val_avg_night"];
+
+  form = new FormGroup({
+    fromDate: new FormControl('', { validators: [Validators.required]}),
+    toDate: new FormControl('', { validators: [Validators.required]})
+  });
   
   constructor(private service:RainfallService) {}
 
@@ -35,8 +42,23 @@ export class RainfallComponent implements AfterViewInit {
       });
     
     
-    return this.rainfalls; 
+    return this.rainfallsDataSource; 
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.rainfallsDataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.rainfallsDataSource.paginator) {
+      this.rainfallsDataSource.paginator.firstPage();
+    }
+  }
+
+  // applyDateFilter() {
+  //   console.log(this.form);
+  //   this.rainfallsDataSource.data = this.ngAfterViewInit();
+  //   this.rainfallsDataSource.data = this.rainfallsDataSource.data.filter(e => (formatDate( e.step_start,'MM/dd/yyyy','en-US') >= this.form.value.fromDate && formatDate( e.,'MM/dd/yyyy','en-US') <= toDate))
+  // }
 
   getRfChart() {
     }
