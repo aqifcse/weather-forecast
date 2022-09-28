@@ -21,7 +21,7 @@ export class RhChartComponent implements OnInit{
   }
 
   getAvgRelativeHumidities() {
-    this.relativeHumidities = this.component.ngOnInit();
+    this.relativeHumidities = this.component.ngAfterViewInit();
 
     for (let i = 0; i < this.relativeHumidities.length; i++) {
       this.avg_relativeHumidity_values.push(this.relativeHumidities[i]['val_avg']);
@@ -32,7 +32,7 @@ export class RhChartComponent implements OnInit{
   }
 
   getStepEnds() {
-    this.relativeHumidities = this.component.ngOnInit();
+    this.relativeHumidities = this.component.ngAfterViewInit();
 
     for (let i = 0; i < this.relativeHumidities.length; i++) {
       this.step_ends.push(this.relativeHumidities[i]['step_end']);
