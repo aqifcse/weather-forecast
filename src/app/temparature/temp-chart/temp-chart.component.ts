@@ -21,7 +21,7 @@ export class TempChartComponent implements OnInit{
   }
 
   getAvgTemparatures() {
-    this.temparatures = this.component.ngOnInit();
+    this.temparatures = this.component.ngAfterViewInit();
 
     for (let i = 0; i < this.temparatures.length; i++) {
       this.avg_temparature_values.push(this.temparatures[i]['val_avg']);
@@ -32,7 +32,7 @@ export class TempChartComponent implements OnInit{
   }
 
   getStepEnds() {
-    this.temparatures = this.component.ngOnInit();
+    this.temparatures = this.component.ngAfterViewInit();
 
     for (let i = 0; i < this.temparatures.length; i++) {
       this.step_ends.push(this.temparatures[i]['step_end']);
