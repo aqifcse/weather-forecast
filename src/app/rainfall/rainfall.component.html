@@ -49,7 +49,7 @@
         mat-raised-button color="accent" 
         (click)="ngAfterViewInit()"
         [disabled]="form.invalid">Submit</button>
-        <button mat-raised-button color="accent" type="button" [disabled]="form.invalid">Clear</button>
+        <button mat-raised-button color="accent" type="button" (click)="form.reset()" [disabled]="form.invalid">Clear</button>
         </form>
 
     <table mat-table [dataSource]="rainfallsDataSource">
